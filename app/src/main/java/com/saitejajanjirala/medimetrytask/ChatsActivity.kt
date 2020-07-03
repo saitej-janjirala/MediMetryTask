@@ -108,7 +108,6 @@ class ChatsActivity : AppCompatActivity() {
                     .setAction("Retry"){
                         retrievechats()
                     }
-
             }){}
         queue.add(request)
     }
@@ -117,10 +116,7 @@ class ChatsActivity : AppCompatActivity() {
         if(obj.checkconnectivity()) {
             val msg = message.text.toString()
             if (msg.isEmpty() || msg.isBlank()) {
-                Snackbar.make(topchats, "Can't send empty message", Snackbar.LENGTH_SHORT)
-                    .setAction("close") {
-                        retrievechats()
-                    }
+               Toast.makeText(this@ChatsActivity,"can't send empty message",Toast.LENGTH_SHORT).show()
             } else {
                     message.text=null
                     val ob=arraylist[arraylist.size-1]
@@ -156,12 +152,4 @@ class ChatsActivity : AppCompatActivity() {
             obj.showdialog()
         }
     }
-    class Back(position:Int,chats:Chats,message:String) :AsyncTask<Unit,Unit,Unit>(){
-        override fun doInBackground(vararg p0: Unit?) {
-
-        }
-
-
-    }
-
 }
