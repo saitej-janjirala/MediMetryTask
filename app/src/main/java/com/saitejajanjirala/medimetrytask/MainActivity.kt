@@ -2,6 +2,7 @@ package com.saitejajanjirala.medimetrytask
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                                 obj.getString("created_at"),
                                 obj.getString("updated_at")
                             )
+                            Log.i("image",obj.getString("image"))
                             arraylist.add(user)
                         }
                         layoutmanager= LinearLayoutManager(this@MainActivity)
